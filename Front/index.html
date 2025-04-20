@@ -1,0 +1,80 @@
+<!DOCTYPE html> <!-- Declara que es un documento HTML5 -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura el diseño para dispositivos móviles -->
+    <title>Registro para participantes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro para participantes</h1>
+        <form id="registroForm">
+            <div class="form-group">
+                <label for="compania">Nombre de la compañía*</label> <!-- Describe el campo (con for que apunta al ID del input) -->
+                <input type="text" id="compania" name="compania" required>
+                <span class="error-message"></span> <!-- Span para mostrar mensajes de validación -->
+            </div>
+            
+            <div class="form-group">
+                <label for="cedula">Cédula*</label>
+                <input type="text" id="cedula" name="cedula" required>
+                <span class="error-message"></span> <!-- Span para mostrar mensajes de validación -->
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre de la persona para contacto*</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <span class="error-message"></span> <!-- Span para mostrar mensajes de validación -->
+            </div>
+            
+            <div class="form-group">
+                <label for="titulo">Título*</label>
+                <input type="text" id="titulo" name="titulo" required>
+                <span class="error-message"></span> <!-- Span para mostrar mensajes de validación -->
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Correo electrónico*</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message"></span> <!-- Span para mostrar mensajes de validación -->
+            </div>
+            
+            <div class="form-group">
+                <label for="telefono">Teléfono*</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <span class="error-message"></span> <!-- Span para mostrar mensajes de validación -->
+            </div>
+            
+            <div class="form-group checkbox">
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos">He leído y acepto el <a href="#">Aviso de privacidad/Términos y condiciones</a></label>
+                <span class="error-message"></span> <!-- Span para mostrar mensajes de validación -->
+            </div>
+            
+            <button type="submit" id="guardarBtn" disabled>Continuar</button>
+        </form>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h2>Datos guardados correctamente</h2>
+            <div id="confirmData"></div>  <!-- Divs donde se insertarán los mensajes dinámicamente -->
+            <button id="aceptarBtn">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- Modal de error -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <h2>Error</h2>
+            <div id="errorData"></div>  <!-- Divs donde se insertarán los mensajes dinámicamente -->
+            <button id="errorAceptarBtn">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

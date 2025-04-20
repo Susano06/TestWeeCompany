@@ -1,0 +1,17 @@
+CREATE DATABASE TestSep;
+GO
+
+USE TestSep;
+GO
+
+CREATE TABLE Participantes (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Compania VARCHAR(100) NOT NULL,
+    Cedula VARCHAR(20) NOT NULL,
+    Nombre VARCHAR(100) NOT NULL,
+    Titulo VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Telefono NVARCHAR(20) NOT NULL,
+    FechaRegistro DATETIME DEFAULT GETDATE()
+);
+GO
